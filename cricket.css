@@ -1,0 +1,18 @@
+#gamediv
+{
+    font-family: 'Nordic Light ', cursive;
+    border: 3px solid;
+    padding: 10px;
+    border-radius: 25px;
+    text-align: center;
+    background-image: url("ground.jpg");
+    height: 500px;
+    width: 900px;
+    margin: auto;
+}
+.choiceBTN{
+    font-family: 'Nordic Light ', cursive;
+    line-height: 30px;
+    width: 150px;
+    border-radius: 10px;
+}

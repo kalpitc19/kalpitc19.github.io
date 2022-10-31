@@ -1,0 +1,60 @@
+.bg{
+    background-image: url("SPSBG.jpg");
+}
+.choiceBTN{
+    line-height: 30px;
+    width: 150px;
+}
+#playerText{
+    color: blue;
+}
+#computerText{
+    color: red;
+}
+#resultText{
+    color: rgb(111, 177, 11);
+}
+
+
+#gamediv{
+    font-family: 'Nordic Light ', cursive;
+    border: 3px solid;
+    padding: 10px;
+    border-radius: 25px;
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+    height: 350px;
+    width: 600px;
+    margin: auto;
+    margin-top: 70px;
+
+}
+
+#stone{
+    height: 100px;
+    width: 100px;
+    background-image: url("stone1.jpg");
+    background-size: 100px 100px;
+    /* background-size: auto; */
+    background-repeat: no-repeat;
+
+}
+#paper{
+    height: 100px;
+    width: 100px;
+    background-image: url("paper.jpg");
+    background-size: 100px 100px;
+    /* background-size: auto; */
+    background-repeat: no-repeat;
+    margin-left: 50px;
+}
+#scissor{
+    height: 100px;
+    width: 100px;
+    background-image: url("sciss.jpg");
+    background-size: 100px 100px;
+    /* background-size: auto; */
+    background-repeat: no-repeat;
+    margin-left: 50px;
+
+}
