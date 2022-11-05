@@ -1,0 +1,122 @@
+<html>
+    <head>
+        <!-- axios is used -->
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <style>
+        tr{
+            height: 50px;
+        }
+        th{
+            width: 100px;
+        }
+        select{
+            margin-left: 210px;
+            width: 120px;
+            background-color: rgb(195, 219, 219);
+            height: 25px;
+            border-radius: 6px;
+        }
+        table{
+            border-radius: 5px;
+            border: 20px black;
+            background-color: rgb(195, 219, 219);
+        }
+        .pos{
+            background-color: green;
+            color: aliceblue;
+        }
+        .neg{
+            background-color: red;
+            color: aliceblue;
+        }
+        .neu{
+            background-color: blue;
+            color: aliceblue;
+        }
+        .bt{
+			border: 2px solid green;
+			padding: 5px 15px;
+			border-radius: 10px;
+            float: right;
+            margin-right: 200px;
+		}
+        .bt:hover, .bt:active {
+		background-color: green;
+		color: whitesmoke;
+		}
+
+        body{
+            background-color: cadetblue;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+
+    </style>
+    </head>
+    <body>
+        <br>
+        <div>
+		<select id="selector" onchange="fetchnews(value)">
+			<option>Economy</option>
+			<option>International</option>
+        </select>
+        <input class="bt" type="button" value="logout" onclick="logout()"/>
+        <br><br><br>
+        <center>
+            <table border="1" width="800">
+            <tr><th>Time</th><th>News Title</th><th>Negative sentiment</th><th>Positive sentiment</th><th>Neutral sentiment</th></tr> 
+            <tr><td id="t00"></td><td id="t10"></td><td id="t20" class="neg"></td><td id="t30" class="pos"></td><td id="t40" class="neu"></td></tr>
+            <tr><td id="t01"></td><td id="t11"></td><td id="t21" class="neg"></td><td id="t31" class="pos"></td><td id="t41" class="neu"></td></tr>
+            <tr><td id="t02"></td><td id="t12"></td><td id="t22" class="neg"></td><td id="t32" class="pos"></td><td id="t42" class="neu"></td></tr>
+            <tr><td id="t03"></td><td id="t13"></td><td id="t23" class="neg"></td><td id="t33" class="pos"></td><td id="t43" class="neu"></td></tr>
+            <tr><td id="t04"></td><td id="t14"></td><td id="t24" class="neg"></td><td id="t34" class="pos"></td><td id="t44" class="neu"></td></tr>	
+            </table>
+        </center>
+        </div>
+
+        <script>
+            const API_KEY = "77c035dc-aa0e-48c1-8a90-202dc2316e2e";
+
+            const fetchnews = (value) => {
+                const newstype = document.getElementById("selector").value.toLowerCase();
+                const url = `https://api.goperigon.com/v1/all?apiKey=${API_KEY}&from=2022-11-03&sourceGroup=top100&showNumResults=true&showReprints=false&excludeLabel=Non-news&excludeLabel=Opinion&excludeLabel=Paid News&excludeLabel=Roundup&excludeLabel=Press Release&sortBy=date&q=${value?value:newstype}`
+
+                const Fnew = axios.get(url).then( resp => {
+                    console.log(resp.data)
+                    const Data = resp.data
+                
+                // to upload the data in the table
+                for(let i=0; i<5 ; i++){
+                    for(let j=0; j<5; j++ ){
+                        Da=document.getElementById(`t${i}${j}`);
+                        if (i==0) {
+                            Da.textContent=`${Data.articles[j].pubDate}`;
+                        }
+                        else if(i==1){
+                            Da.textContent=`${Data.articles[j].title}`;
+                        }
+                        else if(i==2){
+                            Da.textContent=`${Data.articles[j].sentiment["negative"]}`;
+                        }
+                        else if(i==3){
+                            Da.textContent=`${Data.articles[j].sentiment["positive"]}`;
+                        }
+                        else if(i==4){
+                            Da.textContent=`${Data.articles[j].sentiment["neutral"]}`;
+                        }   
+                        
+
+                    }
+                }
+                })
+               
+                // return Fnew
+                
+            }
+            fetchnews()
+            function logout(){
+                window.location="login.html";
+            }
+        </script>
+    </body>
+</html>
