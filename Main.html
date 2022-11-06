@@ -57,8 +57,8 @@
         <br>
         <div>
 		<select id="selector" onchange="fetchnews(value)">
-			<option>Economy</option>
-			<option>International</option>
+			<option>AAPL</option>
+			<option>ADBE</option>
         </select>
         <input class="bt" type="button" value="logout" onclick="logout()"/>
         <br><br><br>
@@ -79,7 +79,7 @@
 
             const fetchnews = (value) => {
                 const newstype = document.getElementById("selector").value.toLowerCase();
-                const url = `https://api.goperigon.com/v1/all?apiKey=${API_KEY}&from=2022-11-03&sourceGroup=top100&showNumResults=true&showReprints=false&excludeLabel=Non-news&excludeLabel=Opinion&excludeLabel=Paid News&excludeLabel=Roundup&excludeLabel=Press Release&sortBy=date&q=${value?value:newstype}`
+                const url = `https://api.goperigon.com/v1/all?apiKey=${API_KEY}&sourceGroup=top10&showNumResults=true&showReprints=false&excludeLabel=Non-news&excludeLabel=Opinion&excludeLabel=Paid News&excludeLabel=Roundup&excludeLabel=Press Release&sortBy=date&q=${value?value:newstype}`
 
                 const Fnew = axios.get(url).then( resp => {
                     console.log(resp.data)
