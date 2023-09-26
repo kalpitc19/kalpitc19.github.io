@@ -1,77 +1,57 @@
-<!DOCTYPE html>
 <html>
-<head>
-	<title></title>
-	<style>
-		.bt:hover, .bt:active {
-		background-color: green;
-		color: whitesmoke;
-		}
+    <head>
+        <meta charset="utf-8">
+        <title> kalpit </title>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="icon" href="css/favicon.ico">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Sacramento&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="top-container">
+            <img class="Tcloud" src="images/cloud.png" alt="cloud">
+            <h1>I'm Kalpit</h1>
+            <h2>A programmer and your buddy</h2>
+            <img class="Bcloud" src="images/cloud.png" alt="">
+            <img src="images/mountain.png" alt="">
 
-		input[type="text"],input[type="password"]
-		{
-			border-radius: 12px;
-			width: 50%;
-			padding: 8px;
-		}
-
-		input[type="checkbox"]
-		{
-			border-radius: 12px; visibility: visible;
-		}
-
-		label
-		{
-			color: whitesmoke;
-			font-weight: bold;
-		}
-        div{
-            width: 600px;
-            margin: auto;
-            align-items: flex;
-            align-content: flex;
-        }
-		.bt{
-			border: 2px solid green;
-			padding: 10px 20px;
-			border-radius: 10px;
-		}
-
-	</style>
-</head>
-
-<body style="background-color: cadetblue;">
-
-	<div style=" border-radius: 30px; margin-left: 300px; margin-top: 100px;">
-	<form style="padding: 10px; border-radius: 40px;">
-		<fieldset style="padding: 50px; border-radius: 30px;background-color: black; opacity: 0.7;">
-
-		<center><label>User name</label><br>
-		<input id="User" type="text" placeholder="Enter your Username" maxlength="20" required autofocus> 
-		<br><br>
-		<label>Password</label><br>
-		<input id="Pass" type="password" placeholder="Enter your password">
-            <br><br><br>
-			<input class="bt" type="button" value="login" onclick="login()"/>
-	    </center>
-		</fieldset>
-	</form>
-	</div>
-
-<script>
-	function login(){
-		var User=document.getElementById("User")
-		var Pass=document.getElementById("Pass")
-		if (User.value== "user" && Pass.value== "password"){
-			window.location="Main.html";	
-		}
-		else{
-			alert('wrong credentials')
-			User.value="";
-			Pass.value="";
-		}
-
-	}
-</script>
-</body>
+        </div>
+        <div class="middle-container">
+            <div class="profile">
+              <img class="Profilepic" src="images/kcpic.jpg" alt="">
+              <h2>Hello.</h2>
+              <p class="intro">Lorem ipsum dolor sit amet, vitae volutpat, dui conubia, dolor urna. Non auctor, montes nulla distinctio.</p>
+            </div>
+            <hr>
+            <div class="skills">
+              <h2>My Skills.</h2>
+              <div class="skill-row">
+                <img class="skillpic" src="images/computer.png" alt="">
+                <h3>Design and development</h3>
+                <p>Lorem ipsum dolor sit amet, quis in duis, iaculis id felis. Consectetuer vestibulum, nunc urna lectus, erat ligula. Hendrerit nam, lectus ante, ut lorem eros.</p>
+              </div>
+              <div class="skill-row">
+                <img class="skillpic2" src="images/competence.png" alt="">
+                <h3>Data analysis</h3>
+                <p>Lorem ipsum dolor sit amet, mauris sed consectetuer. Etiam et eu, bibendum interdum, lacus quis mauris. Curabitur wisi, quisque vel eu, rutrum nam.</p>
+              </div>
+            </div>
+            <hr>
+            <div class="contact-me">
+              <h2>Get In Touch</h2>
+              <h3>Lorem ipsum dolor sit amet, non elit.</h3>
+              <p class="contactme">Lorem ipsum dolor sit amet, in qui=s, aenean amet. Phasellus sodales, tellus donec dui, ornare erat.</p>
+              <a class="btn" href="mailto:kalpitc19@gmail.com">CONTACT ME</a>
+            </div>
+          </div>
+          
+          
+        <div class="bottom-container">
+            <a class="footer-link" href="https://www.linkedin.com/">LinkedIn</a>
+            <a class="footer-link" href="https://twitter.com/">Twitter</a>
+            <a class="footer-link" href="#">Website</a>
+            <p class="copyright">© 2022 Kalpit Chudhary @ KC coding</p>
+        </div>     
+    </body>
 </html>
